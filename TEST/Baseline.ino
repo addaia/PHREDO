@@ -112,8 +112,6 @@ void testAdvance(float targetDistance, unsigned long updateInterval) {
       entryCount++;
     }
   }
-  
-  Serial.println("Test complete. Target distance reached.");
 }
 
 void setup() {
@@ -124,7 +122,6 @@ void setup() {
   Wire.begin();
   if (!imu.init()) {
     while (1) {
-      Serial.println("Failed to detect and initialize IMU!");
       delay(1000);
     }
   }
@@ -139,8 +136,6 @@ void setup() {
   
   // calibrate
   ax_bias = calibrateAccelerometer();
-  Serial.print("Calibrated accelerometer bias (X-axis): ");
-  Serial.println(ax_bias);
   
   // start
   testAdvance(800.0, 40);
