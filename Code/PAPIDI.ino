@@ -1,3 +1,5 @@
+## The kinematics.h file may require small adjustments so that encoders are calibrated.
+
 #include "LineSensors.h"
 #include "Magnetometer.h"
 #include "Motors.h"
